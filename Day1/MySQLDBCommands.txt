@@ -1,0 +1,32 @@
+create table share(
+instrumentId int primary key,
+instrumentName varchar(45),
+marketRate int);
+insert into share values(1,'citi',4500);
+insert into share values(2,'ICICI',3500);
+insert into share values(3,'HDFC',3000);
+select * from share;
+
+create table customer(
+customerId varchar(10) primary key,
+customerName varchar(30));
+
+insert into customer values('C001','Aakash');
+insert into customer values('C002','Bharti');
+insert into customer values('C003','Charu');
+
+create table CustomerShareDetails(
+detailId int primary key,
+shareType varchar(20),
+quantity int,
+customerId varchar(10),
+instrumentId int,
+foreign key(customerId) references customer(customerId),
+foreign key(instrumentId) references share(instrumentId));
+
+insert into CustomerShareDetails values(1,'CNC',60,'C001',1);
+insert into CustomerShareDetails values(2,'IntraDay',40,'C002',3);
+insert into CustomerShareDetails values(3,'CNC',50,'C001',2);
+insert into CustomerShareDetails values(4,'CNC',80,'C003',1);
+
+create index custName on Customer(customerName);
