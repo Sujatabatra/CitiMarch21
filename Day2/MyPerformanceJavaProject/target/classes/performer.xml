@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Setter Injection -->
+	<bean class="com.sujata.producer.Juggler" id="Aditi">
+		<property name="balls" value="3"></property>
+	</bean>
+<!-- Constructor Injection -->
+	<bean class="com.sujata.producer.Singer" id="Kanchan">
+		<constructor-arg name="song" value="Humsafar"></constructor-arg>
+		<constructor-arg name="name" value="Kanchan"></constructor-arg>
+	</bean>
+	
+	<bean class="com.sujata.producer.Guitar" id="guitar"></bean>
+	<bean class="com.sujata.producer.Drum" id="drum"></bean>
+	
+	<bean class="com.sujata.producer.Instrumentalist" id="Divya">
+		<property name="instrument" ref="guitar"></property>
+	</bean>
+	
+</beans>
