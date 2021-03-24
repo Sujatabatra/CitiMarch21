@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/cititraining"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="sujata"></property>
+	</bean>
+	
+	<!-- Persistence layer -->
+	<bean class="com.sujata.persistence.ShareDaoImpl"
+		id="shareDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+		</bean>
+	<bean class="com.sujata.persistence.CustomerShareDetailDaoImpl"
+		id="customerShareDetailDao">
+		<property name="dataSource" ref="dataSource"></property>
+		</bean>
+
+	<!-- Service Layer -->
+	<bean class="com.sujata.service.ShareServiceImpl"
+		id="shareServiceImpl">
+		<property name="shareDao" ref="shareDaoImpl"></property>
+	</bean>
+	<bean class="com.sujata.service.CustomerShareDetailServiceImpl"
+		id="customerShareDetailService">
+		<property name="customerShareDetailDao"
+			ref="customerShareDetailDao"></property>
+	</bean>
+	
+	<!-- Presentation Layer -->
+	<bean class="com.sujata.presentation.SharePresentationImpl" id="sharePresentationImpl">
+		<property name="customerShareDetailService" ref="customerShareDetailService"></property>
+		<property name="shareService" ref="shareServiceImpl"></property>
+	</bean>
+
+</beans>
