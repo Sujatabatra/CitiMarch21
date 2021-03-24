@@ -1,0 +1,8 @@
+Traditional Spring(Without Spring Boot)
+1. adding Right Maven Dependencies
+2. configuration files : XML/Java
+3. launching application context (Spring Container)
+
+In Spring Boot,
+All boiler plate work has been elementaed from us , so that we can focus upon only bussiness logic of application.
+

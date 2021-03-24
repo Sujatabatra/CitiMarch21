@@ -1,0 +1,11 @@
+1. XML Configuration
+we created xml file with omne schema(beans) and used <bean>tag and setter and constructor injection with <property> and <constructor-arg> tags respectively.
+
+2. Annotation Configuration
+we created XML with with two schema(beans,context), specified the path of beans amd used @Component to specify bean and @Autowired and/or @Qualifier for dependency.
+
+3. Java Configuration
+we created Java class annotated it with @Configuration to tell this is configuration file and for location of bean/components used @ComponentScan
+
+4. Java Configuration
+we created Java class Annotated with @Configuration to tell this is configuration file and specified all beans with methods returning the objects of beans by calling setter and constructor for dependency and annotating the methods with @Bean
