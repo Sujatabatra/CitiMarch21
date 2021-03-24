@@ -1,0 +1,7 @@
+1. JEE perspective
+2. server tab
+3. Righ click >> new >> server
+4. Tomcat 8.5 
+5. select intallation home directory >finish
+6. select server >> click on green button
+7. if server start is success >> click on red button to stop the server

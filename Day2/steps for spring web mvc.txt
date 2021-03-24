@@ -1,0 +1,7 @@
+
+1. web.xml <servlet> and <servlet-mapping>
+2. we need to create spring bean configuration file /WEB-INF/dispatcherServletName-servlet.xml
+in our case dispatcher servlet name is : spring mvc so file name is springmvc-servlet.xml
+(Schema : beans, context)
+
+3. Create a class for controller and annotate that class with @Controller 
