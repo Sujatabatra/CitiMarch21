@@ -1,0 +1,12 @@
+var a:number;
+a=10;
+console.log("a: "+a);
+a='sujata';
+console.log("a : "+a);
+var b:string;
+b='sujata';
+var c:boolean;
+c=true;
+var d:any;
+d=10;
+d='sujata';
